@@ -1,5 +1,4 @@
-"""mysocial URL Configuration
-
+"""tweetme2 URL Configuration
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
@@ -16,8 +15,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path # url()
 
-from tweets.views import (home_view, tweet_detail_view, tweet_list_view,
- tweet_create_view,
+from tweets.views import (
+    home_view, 
+    tweet_delete_view,
+    tweet_detail_view, 
+    tweet_list_view,
+    tweet_create_view,
 )
 
 urlpatterns = [
@@ -26,4 +29,5 @@ urlpatterns = [
     path('create-tweet', tweet_create_view),
     path('tweets', tweet_list_view),
     path('tweets/<int:tweet_id>', tweet_detail_view),
+    path('api/tweets/<int:tweet_id>/delete', tweet_delete_view),
 ]
