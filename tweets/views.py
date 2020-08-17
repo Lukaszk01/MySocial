@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from .forms import TweetForm
 from .models import Tweet
-from .serializers import TweetSerializer
+from .serializers import TweetSerializer, TweetActionSerializer
 
 ALLOWED_HOSTS = settings.ALLOWED_HOSTS
 
@@ -53,7 +53,30 @@ def tweet_delete_view(request, tweet_id, *args, **kwargs):
     obj = qs.first()
     obj.delete()
     return Response({"message": "Tweet removed"}, status=200)
-    
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def tweet_action_view(request, *args, **kwargs):
+
+    serializer = TweetActionSerializer(data=request.POST)
+    if serializer.is_valid(raise_exception=True):
+        data = serializer.validated_data
+        tweet_id = data.get("id")
+        action = data.get("action")
+        qs = Tweet.objects.filter(id=tweet_id)
+        if not qs.exists():
+            return Response({}, status=404)
+        obj = qs.first()
+        if action == "like":
+            obj.likes.add(request.user)
+        elif action == "unlike":
+            obj.likes.remove(request.user)
+        elif action == "retweet":
+            # this is todo
+            pass
+    return Response({"message": "Tweet removed"}, status=200)
+
+
 @api_view(['GET'])
 def tweet_list_view(request, *args, **kwargs):
     qs = Tweet.objects.all()
@@ -63,9 +86,7 @@ def tweet_list_view(request, *args, **kwargs):
 
 
 def tweet_create_view_pure_django(request, *args, **kwargs):
-    '''
-    REST API Create View -> DRF
-    '''
+  
     user = request.user
     if not request.user.is_authenticated:
         user = None
@@ -106,11 +127,6 @@ def tweet_list_view_pure_django(request, *args, **kwargs):
 
 
 def tweet_detail_view_pure_django(request, tweet_id, *args, **kwargs):
-    """
-    REST API VIEW
-    Consume by JavaScript or Swift/Java/iOS/Andriod
-    return json data
-    """
     data = {
         "id": tweet_id,
     }
@@ -121,4 +137,4 @@ def tweet_detail_view_pure_django(request, tweet_id, *args, **kwargs):
     except:
         data['message'] = "Not found"
         status = 404
-    return JsonResponse(data, status=status) # json.dumps content_type='application/json'
+    return JsonResponse(data, status=status)
