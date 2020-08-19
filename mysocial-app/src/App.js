@@ -1,3 +1,4 @@
+  
 import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -21,12 +22,29 @@ function loadTweets(callback) {
 }
 
 
+function ActionBtn(props) {
+  const {tweet, action} = props
+  const className = props.className ? props.className : 'btn btn-primary btn-sm'
+  return action.type === 'like' ? <button className={className}>{tweet.likes} Likes</button> : null
+}
+
+function Tweet(props) {
+  const {tweet} = props
+  const className = props.className ? props.className : 'col-10 mx-auto col-md-6'
+  return <div className={className}>
+      <p>{tweet.id} - {tweet.content}</p>
+      <div className='btn btn-group'>
+        <ActionBtn tweet={tweet} action={{type: "like"}}/>
+        <ActionBtn tweet={tweet} action={{type: "unlike"}}/>
+      </div>
+  </div>
+}
+
 function App() {
   const [tweets, setTweets] = useState([])
  
   useEffect(() => {
     const myCallback = (response, status) => {
-      console.log(response, status)
       if (status === 200){
         setTweets(response)
       } else {
@@ -42,11 +60,11 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>
-          {tweets.map((tweet, index)=>{
-            return <li>{tweet.content}</li>
+        <div>
+          {tweets.map((item, index)=>{
+            return <Tweet tweet={item} className='my-5 py-5 border bg-white text-dark' key={`${index}-{item.id}`} />
           })}
-        </p>
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
