@@ -42,12 +42,14 @@ INSTALLED_APPS = [
     'tweets',
 
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -125,7 +127,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_URL_REGEX = r'^/api/.*$'
 DEFAULT_RENDERER_CLASSES = [
         'rest_framework.renderers.JSONRenderer',
     ]
