@@ -30,6 +30,9 @@ class Tweet(models.Model):
         return self.parent != None
     
     def serialize(self):
+        '''
+        Feel free to delete!
+        '''
         return {
             "id": self.id,
             "content": self.content,
