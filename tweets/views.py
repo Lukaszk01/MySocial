@@ -17,8 +17,6 @@ from .serializers import (
 )
 
 ALLOWED_HOSTS = settings.ALLOWED_HOSTS
-
-# Create your views here.
 def home_view(request, *args, **kwargs):
     username = None
     if request.user.is_authenticated:
@@ -61,10 +59,7 @@ def tweet_delete_view(request, tweet_id, *args, **kwargs):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def tweet_action_view(request, *args, **kwargs):
-    '''
-    id is required.
-    Action options are: like, unlike, retweet
-    '''
+ 
     serializer = TweetActionSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         data = serializer.validated_data
