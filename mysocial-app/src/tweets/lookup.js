@@ -1,15 +1,14 @@
 import {backendLookup} from '../lookup'
 
-export function apitweetCreate(newTweet, callback){
+export function apiTweetCreate(newTweet, callback){
     backendLookup("POST", "/tweets/create/", callback, {content: newTweet})
   }
-  export function apitweetAction(tweetId, action, callback){
+
+export function apiTweetAction(tweetId, action, callback){
     const data = {id: tweetId, action: action}
-    backendLookup("POST", "/tweets/action/", callback) 
-        
-    
-  }
+    backendLookup("POST", "/tweets/action/", callback, data)
+}
   
-  export function apitweetList(callback) {
-      backendLookup("GET", "/tweets/", callback)
-  }
+export function apiTweetList(callback) {
+    backendLookup("GET", "/tweets/", callback)
+}
