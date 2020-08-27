@@ -65,8 +65,6 @@ export function TweetsList(props) {
         apiTweetList(handleTweetListLookup)
       }
     }, [tweetsInit, tweetsDidSet, setTweetsDidSet])
-
-
     const handleDidRetweet = (newTweet) => {
       const updateTweetsInit = [...tweetsInit]
       updateTweetsInit.unshift(newTweet)
@@ -88,8 +86,10 @@ export function TweetsList(props) {
 export function ActionBtn(props) {
     const {tweet, action, didPerformAction} = props
     const likes = tweet.likes ? tweet.likes : 0
-    const className = props.className ? props.className : 'btn btn-primary btn-sm'
-    const actionDisplay = action.display ? action.display : 'Action'
+    const {tweet, action} = props
+    const [likes, setLikes] = useState(tweet.likes ? tweet.likes : 0)
+    // const [userLike, setUserLike] = useState(tweet.userLike === true ? true : false)
+
     
     const handleActionBackendEvent = (response, status) =>{
       console.log(response, status)
@@ -111,7 +111,9 @@ export function ParentTweet(props){
   return tweet.parent ? <div className='row'>
   <div className='col-11 mx-auto p-3 border rounded'>
     <p className='mb-0 text-muted small'>Retweet</p>
+
     <Tweet hideActions className={' '} tweet={tweet.parent} />
+
   </div>
   </div> : null
 }
@@ -142,5 +144,6 @@ export function Tweet(props) {
                 <ActionBtn tweet={actionTweet} didPerformAction={handlePerformAction} action={{type: "retweet", display:"Retweet"}}/>
               </div>
       }
+
     </div>
   }
