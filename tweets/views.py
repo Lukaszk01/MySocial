@@ -162,3 +162,4 @@ def tweet_detail_view_pure_django(request, tweet_id, *args, **kwargs):
         data['message'] = "Not found"
         status = 404
     return JsonResponse(data, status=status) # json.dumps content_type='application/json'
+
