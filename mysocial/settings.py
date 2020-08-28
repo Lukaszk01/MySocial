@@ -9,15 +9,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-# remember on same level as manage.py
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '#)=h)_wc*k%f=wk+!$x0t%1wx7*_50$a1%*75s$og(8$27$ju1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -88,8 +82,6 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
