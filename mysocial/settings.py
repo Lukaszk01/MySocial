@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # internal
     'tweets',
     'accounts',
+    'profiles',
 ]
 
 MIDDLEWARE = [
