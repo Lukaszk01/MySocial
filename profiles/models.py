@@ -23,4 +23,3 @@ def user_did_save(sender, instance, created, *args, **kwargs):
 
 post_save.connect(user_did_save, sender=User)
 
-# after the user logs in -> verify profile
