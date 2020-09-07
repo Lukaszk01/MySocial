@@ -29,21 +29,25 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-      
-    <div class='mysocial-detail' data-tweet-id="12" data-class-name='col-6 mx-auto'></div>
-    <div class='mysocial-detail' data-tweet-id="45" data-class-name='col-6 mx-auto'></div>
-    <div class='mysocial-detail' data-tweet-id="108" data-class-name='col-6 mx-auto'></div>
-    
-    
-    <div  id="mysocial" data-username="cfe" data-can-tweet="false"></div>
+    <div id="mysocial-feed" ></div>
+    <div  class='d-none'  id='tweet-container'></div>
+    <div class='d-none' id="mysocial" data-username="lukaszk" data-can-tweet="false"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
     <script>
       var path = window.location.pathname
       var idRegex = /(?<tweetid>\d+)/
       var match = path.match(idRegex)
       if (match) {
         var tweetId = match.groups.tweetid
-        var ,mySocialEl = document.getElementById("mysocial")
-        ,mySocialEl.className = 'd-none'
+        var tweeme2El = document.getElementById("mysocial")
+        tweeme2El.className = 'd-none'
         var tweetEl = "<div class='mysocial-detail' data-tweet-id=" + tweetId + " data-class-name='col-6 mx-auto'></div>"
         var mainContainer = document.getElementById("tweet-container")
         mainContainer.innerHTML = tweetEl
