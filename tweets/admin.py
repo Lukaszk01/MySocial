@@ -15,3 +15,5 @@ class TweetAdmin(admin.ModelAdmin):
         model = Tweet
 
 admin.site.register(Tweet, TweetAdmin)
+
+

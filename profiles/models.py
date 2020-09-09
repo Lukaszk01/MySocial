@@ -26,3 +26,5 @@ def user_did_save(sender, instance, created, *args, **kwargs):
         Profile.objects.get_or_create(user=instance)
 
 post_save.connect(user_did_save, sender=User)
+
+# after the user logs in -> verify profile
