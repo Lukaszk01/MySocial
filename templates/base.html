@@ -8,12 +8,107 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     {% include 'react/css.html' %}
+    
     <style>
       .bg-tweetme {
-          background-color: #8e1f1f!important;
+          background-color: #efffce;
+          height: 150px;
+          box-shadow: 1px 1px 2px gray;
+          
       }
-    </style>
-    <title>Tweetme 2 {% block head_title %}{% endblock head_title%}</title>
+      .navbar-dark .navbar-nav .nav-link {
+        color: black;
+        text-shadow: 0.5px 0.5px 0.5px gray;
+        background-color: #edfff1;
+        box-shadow: 0.3px 0.3px 3px gray;
+      }
+      .navbar-dark .navbar-nav .nav-link:hover {
+        color: green;
+        background-color: white;
+      }
+      .navbar-dark .navbar-brand {
+        color: gray;
+        text-shadow: 0.3px 0.3px 3px white;
+        font-family:fantasy;
+        font-size: 40px;
+        text-align: center;
+
+    }
+    .form-control {
+      margin-top: 100px;
+      box-shadow: 0.3px 0.3px 1px gray;
+      background-color: #f9f9f9;
+    }
+  
+    .pb-5, .py-5 {
+      border-radius: 8px;
+      box-shadow: 1px 1px 20px gray;
+      
+    } 
+    body {
+      background-color: #edfff1;
+      background-image: url('https://www.betterwalls.at/pim/pr/WP/20002891/photo-wallpaper-wild-forest_big01.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .my-5, .py-5, .border, .bg-white, .text-dark {
+      background-color: #edfff1;
+    }
+    .my-5, .py-5, .border, .bg-white, .text-dark p{
+      color: pink;
+    }
+    .mx-1, .px-3, .py-2, .rounded-circle, .bg-dark, .text-white {
+      padding: 100px;
+    }
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+      color: white;
+      text-shadow: 1px 1px 1px black;
+    }
+    label {
+      color: #eefbcd;
+      text-shadow: 1px 1px 3px  black;
+    }
+    p {
+      color: #eefbcd;
+      text-shadow: 0.5px 0.5px 0.5px  gray;
+    }
+    li {
+      color: #eefbcd;
+      text-shadow: 1px 1px 3px  black;
+    }
+    input {
+      border-radius: 5px;
+      width: 400px;
+      height: 35px;
+      box-shadow: 1px 2px 3px white;
+      border: solid 1px gray;
+    }
+    .btn-secondary {
+    color: black;
+    background-color: #efffce;
+    border-color: black;
+    margin: 15px;
+}
+.bg-white {
+  background-color: black;
+}
+button {
+  color: black;
+    background-color: #efffce;
+    border-color: black;
+    margin: 15px;
+    border-radius: 20%;
+}
+.d-flex {
+  background-color: #ECFDF1;
+}
+#tweetme-2 {
+  background-color: transparent;
+}
+  </style>
+    <title>My Social {% block head_title %}{% endblock head_title%}</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
