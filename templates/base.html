@@ -8,9 +8,24 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     {% include 'react/css.html' %}
+    
     <style>
       .bg-tweetme {
-          background-color: #8e1f1f!important;
+          background-color: hsl(80, 90%, 70%);
+          height: 150px;
+          box-shadow: 1px 1px 2px gray;
+          
+      }
+      .navbar-dark .navbar-nav .nav-link {
+        color: black;
+        text-shadow: 0.5px 0.5px 0.5px gray;
+        
+        background-color: white;
+        box-shadow: 0.3px 0.3px 3px gray;
+      }
+      .navbar-dark .navbar-nav .nav-link:hover {
+        color: green;
+        background-color: white;
       }
     </style>
     <title>My Social {% block head_title %}{% endblock head_title%}</title>
