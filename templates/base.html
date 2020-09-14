@@ -11,7 +11,7 @@
     
     <style>
       .bg-tweetme {
-          background-color: hsl(80, 90%, 70%);
+          background-color: #efffce;
           height: 150px;
           box-shadow: 1px 1px 2px gray;
           
@@ -19,14 +19,42 @@
       .navbar-dark .navbar-nav .nav-link {
         color: black;
         text-shadow: 0.5px 0.5px 0.5px gray;
-        
-        background-color: white;
+        background-color: #edfff1;
         box-shadow: 0.3px 0.3px 3px gray;
       }
       .navbar-dark .navbar-nav .nav-link:hover {
         color: green;
         background-color: white;
       }
+      .navbar-dark .navbar-brand {
+        color: gray;
+        text-shadow: 0.3px 0.3px 3px white;
+        font-family:fantasy;
+        font-size: 40px;
+        text-align: center;
+
+    }
+    .form-control {
+      margin-top: 100px;
+      box-shadow: 0.3px 0.3px 1px gray;
+      background-color: #f9f9f9;
+    }
+    .pb-5, .py-5 {
+      border-radius: 8px;
+      background-color: black;
+    } 
+    body {
+      background-color: #edfff1;
+    }
+    .my-5, .py-5, .border, .bg-white, .text-dark {
+      background-color: #edfff1;
+    }
+    .my-5, .py-5, .border, .bg-white, .text-dark p{
+      color: pink;
+    }
+    .mx-1, .px-3, .py-2, .rounded-circle, .bg-dark, .text-white {
+      padding: 100px;
+    }
     </style>
     <title>My Social {% block head_title %}{% endblock head_title%}</title>
   </head>
