@@ -42,19 +42,23 @@
   
     .pb-5, .py-5 {
       border-radius: 8px;
-      box-shadow: 1px 1px 20px gray;
+      box-shadow: 1px 1px 0.5px gray;
+      /* border: solid 1px white; */
       
     } 
+    .border {
+      border: 1px solid transparent!important;
+    }
     body {
-      background-color: #edfff1;
-      background-image: url('https://www.betterwalls.at/pim/pr/WP/20002891/photo-wallpaper-wild-forest_big01.jpg');
+      background-color: #fcf9f9;
+      /* background-image: url('https://www.betterwalls.at/pim/pr/WP/20002891/photo-wallpaper-wild-forest_big01.jpg'); */
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
     }
     .my-5, .py-5, .border, .bg-white, .text-dark {
-      background-color: #edfff1;
+      background-color: #FCF9F9;
     }
     .my-5, .py-5, .border, .bg-white, .text-dark p{
       color: pink;
@@ -64,15 +68,16 @@
     }
     .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
       color: white;
-      text-shadow: 1px 1px 1px black;
+      text-shadow: 1px 1px 2px black;
     }
     label {
       color: #eefbcd;
       text-shadow: 1px 1px 3px  black;
     }
     p {
-      color: #eefbcd;
-      text-shadow: 0.5px 0.5px 0.5px  gray;
+      color: pink;
+      text-shadow: 0.2px 0.2px 0.2px  black;
+      font-size: 22px;
     }
     li {
       color: #eefbcd;
@@ -94,9 +99,6 @@
 .bg-white {
   background-color: black;
 }
-.userPhoto {
-  height: 1000px;
-}
 button {
   color: black;
     background-color: #efffce;
@@ -105,7 +107,20 @@ button {
     border-radius: 20%;
 }
 .d-flex {
-  background-color: #ECFDF1;
+  background-color: white;
+}
+.btn-primary, .btn-sm {
+  background-color: #b9f7aa;
+  border: none;
+  color: black;
+}
+.btn-primary:hover {
+  background-color: #ecfdf1;
+  color: black;
+}
+.btn-outline-primary:hover {
+  background-color: #ecfdf1;
+  color: black;
 }
 #tweetme-2 {
   background-color: transparent;
